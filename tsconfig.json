@@ -1,0 +1,31 @@
+{
+  "ts-node": {
+    "files": true
+  },
+  "files": ["src/types/index.d.ts"],
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "commonjs",
+    "outDir": "./build",
+    "rootDir": "./src",
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": false,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "plugins": [
+      {
+        "transform": "typescript-transform-paths"
+      }
+    ],
+    "typeRoots": ["./node_modules/@types", "./src/types"]
+  },
+  "include": ["./src/**/*.ts", "./src/**/*.d.ts"],
+  "exclude": ["node_modules", "tests"]
+}
