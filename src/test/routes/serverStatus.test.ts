@@ -1,5 +1,5 @@
-import { expect, api, Response } from "../utils";
-import { isIsoDate } from "../../utils/date";
+import { isIsoDate } from "@/utils/date";
+import { expect, api, Response } from "../testUtils";
 
 describe("GET /server-status", () => {
   let response: Response;

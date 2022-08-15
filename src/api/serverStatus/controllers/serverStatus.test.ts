@@ -1,4 +1,4 @@
-import { expect } from "@/test/utils";
+import { expect } from "@/test/testUtils";
 import { isIsoDate } from "@/utils/date";
 import { ServerStatusController, ServerStatus } from "./serverStatus.controller";
 
