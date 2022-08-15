@@ -1,5 +1,5 @@
-import { expect } from "@/test/testUtils";
-import { isIsoDate } from "@/utils/date";
+import { expect } from "@/test";
+import { isIsoDate } from "@/utils";
 import { ServerStatusController, ServerStatus } from "./serverStatus.controller";
 
 describe("serverStatus controller", () => {

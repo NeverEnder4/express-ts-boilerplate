@@ -1,4 +1,4 @@
-import { isIsoDate } from "@/utils/date";
+import { isIsoDate } from "@/utils";
 import { expect, api, Response } from "../testUtils";
 
 describe("GET /server-status", () => {
