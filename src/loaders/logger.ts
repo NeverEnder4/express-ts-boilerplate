@@ -1,10 +1,10 @@
 import winston, { Logger } from "winston";
 import Transport from "winston-transport";
 
-import { log } from "@/config";
+import { log, env } from "@/config";
 
 const transports: Transport[] = [];
-if (process.env.NODE_ENV !== "development") {
+if (env.nodeEnv !== "development" && env.nodeEnv !== "test") {
   transports.push(new winston.transports.Console());
 } else {
   transports.push(

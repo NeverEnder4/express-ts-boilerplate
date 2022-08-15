@@ -1,8 +1,12 @@
-# modules
+# Modules
 node_modules
 
-# environment variables
+# Environment variables
 .env
 
-# ts build output
+# TS build output
 build
+
+# Test
+coverage
+.nyc_output

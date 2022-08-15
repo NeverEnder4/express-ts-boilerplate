@@ -1,3 +1,5 @@
+// For compilation only!! The tsconfig.build.json is for generating/compiling the build directory.
+
 {
   "ts-node": {
     "files": true
@@ -6,18 +8,21 @@
   "compilerOptions": {
     "target": "ES2015",
     "module": "commonjs",
-    "outDir": "./build",
-    "rootDir": "./src",
     "strict": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "sourceMap": true,
+    "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": false,
+    "resolveJsonModule": true,
+    "noEmit": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      // Necessary to run tsoa controllers in dev
+      "tsoa": ["node_modules/tsoa/dist"],
+      "tsoa/": ["node_modules/tsoa/dist/"]
     },
     "plugins": [
       {
@@ -27,5 +32,5 @@
     "typeRoots": ["./node_modules/@types", "./src/types"]
   },
   "include": ["./src/**/*.ts", "./src/**/*.d.ts"],
-  "exclude": ["node_modules", "tests"]
+  "exclude": ["node_modules"]
 }

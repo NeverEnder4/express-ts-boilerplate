@@ -1,0 +1,9 @@
+// The purpose of this config is to extend the default config which is only for compilation and exclude a few more files/folders when exporting a build
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./build",
+    "noEmit": false
+  },
+  "exclude": ["./src/test", "./src/swagger.json", "./src/api/**/*.test.ts"]
+}

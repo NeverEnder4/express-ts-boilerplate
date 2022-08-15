@@ -1,9 +1,10 @@
 import express, { NextFunction, Request, Response } from "express";
 import cors from "cors";
+import swaggerUI from "swagger-ui-express";
 
-import { prefix } from "@/config";
-import routes from "@/api";
 import { ExpressLoaderArgs } from "./types";
+import { RegisterRoutes } from "@/routes";
+import swaggerJson from "../swagger.json";
 
 export default async ({ app }: ExpressLoaderArgs): Promise<void> => {
   // The magic package that prevents frontend developers going nuts
@@ -18,7 +19,9 @@ export default async ({ app }: ExpressLoaderArgs): Promise<void> => {
   app.use(express.urlencoded({ extended: true }));
 
   // Setup api routes
-  app.use(prefix.api, routes());
+  RegisterRoutes(app);
+
+  app.use("/docs", swaggerUI.serve, swaggerUI.setup(swaggerJson));
 
   /// catch 404 and forward to error handler
   app.use((req: Request, res: Response, next: NextFunction) => {

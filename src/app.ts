@@ -3,7 +3,7 @@ import express, { Application } from "express";
 import { env } from "./config";
 import Logger from "./loaders/logger";
 
-async function startServer() {
+async function startServer(): Promise<void> {
   const app: Application = express();
 
   await require("./loaders").default({ app });
